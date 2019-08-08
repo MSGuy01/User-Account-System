@@ -5,18 +5,10 @@
         $_SESSION['username'] = false;
     }
     require('db.php');
-    #create query
-    $query = "SELECT * FROM [table name]";// ORDER BY Created_at DESC";
-
-    #get result
+    $query = "SELECT * FROM [table name]";
     $result = mysqli_query($conn, $query);
-
-    #fetch data
     $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-    #free result
     mysqli_free_result($result);
-    #close connection
     mysqli_close($conn);
 ?>
 
